@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Star Wars Planets</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+             <p:panelGrid columns="1" style="margin: 0 auto;">
+               <h:outputText class='title' value="Star Wars Planets" />
+                
+            </p:panelGrid>
+
+            <p:panelGrid columns="2" style="margin: 0 auto; ">
+                <p:outputLabel value="Search Planet"  />
+                <p:inputText value="#{starWarsPlanetController.input}"/>
+            </p:panelGrid>   
+            <p:panelGrid columns="3" style="margin: 0 auto;">
+                <p:commandButton ajax="false" value="Search by ID" action="#{starWarsPlanetController.findByID}"/>  
+                <p:commandButton ajax="false" value="Search by Name" action="#{starWarsPlanetController.findByName}"/>  
+                <p:commandButton ajax="false" value="Show all Planets" action="#{starWarsPlanetController.showAll}"/>  
+            </p:panelGrid> 
+
+            <p:dataTable value="#{starWarsPlanetController.planets}" var="p">
+                <p:column headerText="NAME">#{p.name}</p:column>
+                <p:column headerText="CLIMATE">#{p.climate}</p:column>
+                <p:column headerText="DIAMETER">#{p.diameter}</p:column>
+                <p:column headerText="TERRAIN">#{p.terrain}</p:column>
+                <p:column headerText="POPULATION">#{p.population}</p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

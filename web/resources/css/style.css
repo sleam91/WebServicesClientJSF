@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 2, 2020, 11:56:12 AM
+    Author     : sleam
+*/
+body{
+    background-image: url("img/img.jpg");
+}
+
+
+.title{
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+}
